@@ -3,6 +3,10 @@
 # pi status logging
 
 - `pi-status-logger.sh` is used to record the staus of pi with data like timestamp,cpu_temp,cpu_usage_percent,ram_used_mb,ram_total_mb,ram_percent,core_voltage,throttled_flags, 
+- update the permission of `pi-status-logger.sh`
+    ```bash
+    sudo chmod +x pi-status-logger.sh
+    ```
 - every two minutes a file will be created and the data will be recorded
 - create a user group pilogs and add the current logged in user to that group 
     ```bash
