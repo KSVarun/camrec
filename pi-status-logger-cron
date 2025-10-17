@@ -1,0 +1,10 @@
+/var/log/pi-status-logger/service.log {
+    daily
+    su idks pilogs
+    rotate 999999
+    compress
+    delaycompress
+    missingok
+    notifempty
+    create 660 idks pilogs
+}
