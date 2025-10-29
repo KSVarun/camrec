@@ -19,8 +19,9 @@ mkdir -p "$OUTPUT_DIR"
 
 echo "Recording to $OUTPUT_DIR in 5-minute chunks..."
 
-ffmpeg -rtsp_transport tcp -i "$CAMERA_RTSP" \
-    -c:v copy -c:a aac -b:a 128k \
+ ffmpeg -rtsp_transport tcp -use_wallclock_as_timestamps 1 -fflags +genpts -i "$CAMERA_RTSP" \
+    -c:v libx264 -preset veryfast -crf 30 \
+    -c:a aac -b:a 96k \
     -f segment \
     -segment_time $CHUNK_DURATION \
     -reset_timestamps 1 \
