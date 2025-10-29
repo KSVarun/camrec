@@ -13,8 +13,9 @@
     sudo groupadd pilogs
     sudo usermod -aG pilogs idks
     ```
-- updated the permissions of the file `/var/log/pi-status-logger`
+- create and update the permissions of the file `/var/log/pi-status-logger`
     ```bash
+    sudo mkdir /var/log/pi-status-logger
     sudo chown root:pilogs /var/log/pi-status-logger
     sudo chmod 770 /var/log/pi-status-logger
     ```
