@@ -1,0 +1,22 @@
+[Unit]
+Description=MediaMTX Streaming Server
+After=network.target
+
+[Service]
+Type=simple
+User=idks
+Group=idks
+
+ExecStart=/usr/local/bin/mediamtx /etc/mediamtx/mediamtx.yml
+WorkingDirectory=/etc/mediamtx
+
+Restart=always
+RestartSec=2
+
+LimitNOFILE=1048576
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
