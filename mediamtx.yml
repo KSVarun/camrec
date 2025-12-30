@@ -1,0 +1,28 @@
+logLevel: info
+
+rtsp: yes
+
+webrtc: yes
+
+webrtcAddress: :8889
+
+srt: yes
+
+metrics: yes
+metricsAddress: :9998
+
+authInternalUsers:
+  - user: any
+    pass:
+    ips: []
+    permissions:
+      - action: publish
+      - action: read
+      - action: playback
+      - action: api
+      - action: metrics
+      - action: pprof
+
+paths:
+  cam1:
+    source: publisher
